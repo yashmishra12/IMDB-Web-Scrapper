@@ -31,5 +31,5 @@ class BestMoviesSpider(CrawlSpider):
             'duration' : response.xpath('normalize-space((//time)[1]/text())').get(),
             'genre' : response.xpath('(//div[@class="subtext"]/a)[1]/text()').get(),
             'rating' : response.xpath('//span[@itemprop="ratingValue"]/text()').get(),
-            'release_date': response.xpath('(//div[@class="subtext"]/a)[2]/text()').get()  
+            'release_date': response.xpath('//a[@title="See more release dates"]/text()').get()  
         }
